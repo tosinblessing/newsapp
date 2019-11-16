@@ -18,3 +18,9 @@
 Route::get('/', function(){
  return view ('frontend.index');
 });
+
+// for admin acess to the backend
+Route::group(['prefix' => 'backend'], function(){
+   
+    Route::get('/', 'Admin\DashboardController@index');
+});
